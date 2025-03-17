@@ -51,5 +51,36 @@ def naj():
     print(sorted(liczby, key=liczby.get))
 
 
+def rosnocamalejace():
+        plik = open("/home/elliot/Downloads/Dane_2305/pi.txt", "r")
+        linie = plik.readlines()
+        tab = []
+        tab1 = []
+        for x in range(len(linie) - 5):
+            i = 0
+            ciag = []
+            while i < 6:
+                ciag.append(int(linie[x + i]))
+                i += 1
+            tab.append(ciag)
+        print(tab)
+
+        licznik = 0
+        for x in tab:
+            if x[0] < x[1] < x[2] and x[3] > x[4] > x[5]:
+                licznik += 1
+            elif x[0] < x[1] < x[2] < x[3] and x[4] > x[5]:
+                licznik += 1
+            elif x[0] < x[1] and x[2] > x[3] > x[4] > x[5]:
+                licznik += 1
+            else:
+                pass
+
+
+        print(licznik)
+
+
+
+
 #dwucyfrowe()
-naj()
+rosnocamalejace()
