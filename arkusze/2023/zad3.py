@@ -79,8 +79,33 @@ def rosnocamalejace():
 
         print(licznik)
 
+def czyrosmal(x):
+    for i in range(len(x)):
+        
+
+def najdluzszy():
+        plik = open("/home/elliot/Downloads/Dane_2305/pi.txt", "r")
+        linie = plik.readlines()
+        pi = []
+        for x in linie:
+            pi.append(int(x))
+        max = []
+        for index in range(len(pi)):
+            tab = [pi[index]]
+            x = 1
+            while x < len(pi) - index:
+                tab.append(pi[index + x])
+                if czyrosmal(tab) and len(tab) > len(max):
+                    max = tab
+
+najdluzszy()
+                
+                
+
+
+
 
 
 
 #dwucyfrowe()
-rosnocamalejace()
+
