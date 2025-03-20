@@ -80,7 +80,23 @@ def rosnocamalejace():
         print(licznik)
 
 def czyrosmal(x):
-    for i in range(len(x)):
+    for i in range(1, len(x)-1, 1):
+        tab1 = x[:i]
+        tab2 = x[i:]
+        czyros = True
+        czymal = False
+        for x in range(len(tab1)-1):
+            if tab1[x] > tab1[x+1]:
+                czyros = False
+        for x in range(len(tab2)-1):
+            if tab2[x] < tab2[x+1]:
+                czymal = False
+        if czyros == True and czymal == True:
+            return True
+        return False
+            
+
+
         
 
 def najdluzszy():
@@ -97,6 +113,7 @@ def najdluzszy():
                 tab.append(pi[index + x])
                 if czyrosmal(tab) and len(tab) > len(max):
                     max = tab
+                x += 1
 
 najdluzszy()
                 
