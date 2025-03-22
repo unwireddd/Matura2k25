@@ -62,6 +62,7 @@ def dzielniki_pierwsze():
 
 #kwadraty()
 def najwieksza_najmniejsza():
+    #tu wychodzi zle ale to na potem
         plik = open("/home/elliot/Downloads/Dane-2412/liczby.txt", "r")
         lin = plik.readlines()
         linie = []
@@ -75,8 +76,12 @@ def najwieksza_najmniejsza():
             najmniejsza = 0
             tab = []
             for i in range(len(x)):
-                tab.append(x[i])
-            sort1 = tab.sort()
+                if x[i] != '\n':
+                    tab.append(int(x[i]))
+            #print(tab)
+            sort1 = sorted(tab)
+            #print(sort1)
+            
             sort = []
             for x in sort1:
                 sort.append(str(x))
@@ -87,16 +92,16 @@ def najwieksza_najmniejsza():
             najmniejsza = sort2[0] + sort2[1] + sort2[2] + sort2[3]
             najwieksza = int(najwieksza)
             namniejsza = int(najmniejsza)
-            final = najwieksza - najmniejsza
-            if x > final:
+            final = int(najwieksza) - int(najmniejsza)
+            if int(x) > final:
                 ile_mniejszych += 1
-            elif x < final:
+            elif int(x) < final:
                 ile_wiekszych += 1
-            elif x == final:
+            elif int(x) == final:
                 ile_rownych += 1
-            print(ile_mniejszych)
-            print(ile_wiekszych)
-            print(ile_rownych)
+        print(ile_mniejszych)
+        print(ile_wiekszych)
+        print(ile_rownych)
 
             #jeszcze nie dziala
 
