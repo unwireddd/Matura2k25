@@ -14,26 +14,33 @@ def najwieksze_pola():
         print(wyniki[0])
         print(wyniki[len(wyniki) - 1])
 def czy_miesci():
-    #nie dziala
-        liczby = open("/home/elliot/Downloads/Dane-2412/prostokaty.txt")
+    #dalej nie dziala
+        liczby = open("/home/elliot/Downloads/Dane-2412/prostokaty_przyklad.txt")
         linie = liczby.readlines()
         wyniki = []
         dlugosc = 0
         dlugosci = []
-        for x in linie:
-            a = int(x.split()[0])
-            b = int(x.split()[1])
-            wynik = a * b
-            wyniki.append(wynik)
-        for x in range(len(wyniki)-1):
-            if wyniki[x] == wyniki[x+1]:
+        for x in range(1,len(linie)):
+            a = int(linie[x].split()[0])
+            b = int(linie[x].split()[1])
+            print("")
+            print(a)
+            print(b)
+            
+            print(int(linie[x-1].split()[0]))
+            print(int(linie[x-1].split()[1]))
+            print("")
+            if a <= int(linie[x-1].split()[0]) and b <= int(linie[x-1].split()[1]):
                 dlugosc += 1
             else:
                 dlugosci.append(dlugosc)
                 dlugosc = 0
-        final = sorted(dlugosci)
-        print(final)
-            
+        print(dlugosci)
+        dlugosci = sorted(dlugosci)
+        print(dlugosci[len(dlugosci)-1])
+
+
+        
 
 
 czy_miesci()
