@@ -1,12 +1,12 @@
 def czy_pierwsza(liczba):
     ile = 0
-    for x in range(1, liczba+1):
+    for x in range(1, liczba):
         #print(x)
+
         if liczba % x == 0:
-            ile += 1
-    if ile == 2:
-        return True
-    return False
+            return False
+
+    return True
 
 
 def ile_pierwszych():
