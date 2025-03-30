@@ -54,6 +54,7 @@ def goldbach():
     #dobra to ogolnie bedzie dzialac ale wykonanie tego to zajmie godzine wiec polecam sprawdzic gdzie indziej rozwiazanie
 
 def szesnastkowe():
+    #dziala
     plik = open("/home/elliot/Downloads/Dane_2212/liczby.txt", "r")
     liczby_str = plik.readlines()
     liczby = []
@@ -79,22 +80,23 @@ def szesnastkowe():
         "F": 0,
     }
     for x in liczby:
-        for x in range(x-1):
+        #print("sprawdzam")
             while x > 0:
                 reszta = x % 16
+                print(reszta)
                 if reszta < 10:
                     cyfry[reszta] += 1
-                elif reszta == 11:
+                elif reszta == 10:
                     cyfry["A"] += 1
-                elif reszta == 12:
+                elif reszta == 11:
                     cyfry["B"] += 1
-                elif reszta == 13:
+                elif reszta == 12:
                     cyfry["C"] += 1
-                elif reszta == 14:
+                elif reszta == 13:
                     cyfry["D"] += 1
-                elif reszta == 15:
+                elif reszta == 14:
                     cyfry["E"] += 1
-                elif reszta == 16:
+                elif reszta == 15:
                     cyfry["F"] += 1
                 x = x // 16
     print(cyfry)
