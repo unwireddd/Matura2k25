@@ -26,4 +26,36 @@ def nieparzysty_skrot():
 
     print(nieparzyste[len(nieparzyste)-1])
 
-nieparzysty_skrot()
+
+def NWD(a, b):
+    while a != b:
+        if a > b:
+            a = a - b
+        else:
+            b = b - a
+    return a
+
+
+def skroty():
+    plik = open("/home/elliot/Downloads/Dane-NF-2405/skrot.txt", "r")
+    linie = plik.readlines()
+    liczby = []
+    skroty = []
+
+    for x in linie:
+        x = x[:-2]
+        liczby.append(x)
+    
+    for x in liczby:
+        l = ""
+        for y in range(len(x)):
+            if int(x[y]) % 2 != 0:
+                l = l + x[y]
+        if len(l) > 0:
+            skroty.append(l)
+    print(skroty)
+
+
+
+
+skroty()
